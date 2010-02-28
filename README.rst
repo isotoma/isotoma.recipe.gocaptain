@@ -6,7 +6,8 @@ similar to those you find in /etc/init.d.  By default it will inspect your
 system and either write a "simple" script, such as you might produce yourself
 or produce a LinuxStandard Base variation, that provides more tooling.
 
-In particular the LSB scripts will try multiple times to shut down your daemon, and will not start it if it is already running.
+In particular the LSB scripts will try multiple times to shut down your daemon,
+and will not start it if it is already running.
 
 This package also provides a simple way to produce these scripts from other
 buildout recipes - see `isotoma.recipe.varnish`_ for an example.

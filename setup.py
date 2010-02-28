@@ -6,7 +6,7 @@ setup(
     name = 'isotoma.recipe.gocaptain',
     version = version,
     description = "Starting and stopping daemons",
-    long_description = open("README.txt").read() + "\n" + \
+    long_description = open("README.rst").read() + "\n" + \
                        open("CHANGES.txt").read(),
     classifiers = [
         "Framework :: Buildout",
