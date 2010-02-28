@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
-version = '0.0.1'
+version = '0.0.2'
 
 setup(
     name = 'isotoma.recipe.gocaptain',
     version = version,
     description = "Starting and stopping daemons",
-    long_description = open("README.txt").read() + "\n" + \
+    long_description = open("README.rst").read() + "\n" + \
                        open("CHANGES.txt").read(),
     classifiers = [
         "Framework :: Buildout",
