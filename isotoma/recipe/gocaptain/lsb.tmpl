@@ -1,0 +1,41 @@
+#! /bin/bash
+
+. /lib/lsb/init-functions
+
+${preamble}
+
+case "\$1" in
+    start)
+        output=\$(/bin/tempfile -s.$name)
+        log_daemon_msg "Starting $description"
+        log_progress_msg "$name"
+        if start-stop-daemon \
+            --start --quiet --pidfile $pidfile --exec $daemon -- \
+            #echo " \\\n".join([12*" " + x.strip() for x in $args.strip()split("\n")])
+            > \${output} 2>&1; then
+                log_end_msg 0
+        else
+                log_end_msg 1
+                cat \$output
+                exit 1
+        fi
+        rm \$output
+        ;;
+    stop)
+        log_daemon_msg "Stopping $description"
+        log_progress_msg "$name"
+        if start-stop-daemon \
+            --stop --quiet --pidfile $pidfile --retry 10 \
+            --exec $daemon; then
+                log_end_msg 0
+        else
+                log_end_msg 1
+        fi
+        ;;
+    *)
+        log_success_msg "Usage: $0 {start|stop}"
+        exit 1
+        ;;
+esac
+
+exit 0

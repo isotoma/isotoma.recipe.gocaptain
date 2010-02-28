@@ -1,0 +1,20 @@
+#!/bin/sh
+
+${preamble}
+
+case "$1" in
+    start)
+        echo "Starting $description"
+        exec ${daemon} \
+        #echo " \\\n".join([12*" " + x.strip() for x in $args.strip()split("\n")]) + "\n"
+        ;;
+    stop)
+        kill `cat ${pidfile}`
+        ;;
+    *)
+        echo "Usage $0 {start|stop}"
+        exit 1
+        ;;
+esac
+
+exit 0
