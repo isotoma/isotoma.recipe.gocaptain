@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
-version = '0.0.0'
+version = '0.0.1'
 
 setup(
     name = 'isotoma.recipe.gocaptain',
     version = version,
     description = "Starting and stopping daemons",
-    long_description = open("README.rst").read() + "\n" + \
+    long_description = open("README.txt").read() + "\n" + \
                        open("CHANGES.txt").read(),
     classifiers = [
         "Framework :: Buildout",
@@ -14,6 +14,9 @@ setup(
         "Operating System :: POSIX",
         "License :: OSI Approved :: Apache Software License",
     ],
+    package_data = {
+        '': ['README.rst', 'CHANGES.txt'],
+    },
     keywords = "buildout",
     author = "Doug Winter",
     author_email = "doug.winter@isotoma.com",

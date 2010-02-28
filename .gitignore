@@ -1,0 +1,5 @@
+build
+dist
+isotoma.recipe.gocaptain.egg-info
+*.pyc
+
