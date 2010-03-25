@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.0.3'
+version = '0.0.4'
 
 setup(
     name = 'isotoma.recipe.gocaptain',
@@ -16,6 +16,7 @@ setup(
     ],
     package_data = {
         '': ['README.rst', 'CHANGES.txt'],
+        'isotoma.recipe.gocaptain': ['lsb.tmpl', 'simple.tmpl']
     },
     keywords = "buildout",
     author = "Doug Winter",
