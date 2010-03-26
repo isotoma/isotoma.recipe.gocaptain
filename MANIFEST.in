@@ -1,1 +1,2 @@
 include README.rst CHANGES.txt
+recursive-include isotoma/recipe/gocaptain *.tmpl
