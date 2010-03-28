@@ -4,6 +4,13 @@ import logging
 
 from Cheetah.Template import Template
 
+try:
+    from hashlib import sha1
+except ImportError:
+    import sha
+    def sha1(str):
+        return sha.new(str)
+
 here = os.path.dirname(__file__)
 
 class GoCaptain(object):
@@ -86,6 +93,9 @@ class Buildout(GoCaptain):
         self.logger = logging.getLogger(self.name)
         if self.template is not None:
             self.options.setdefault("template", self.template)
+
+            # Record a SHA1 of the template we use, so we can detect changes in subsequent runs
+            self.options["__hashes_template"] = sha1(open(self.options["template"]).read()).hexdigest()
 
     def install(self):
         if 'template' in self.options:
