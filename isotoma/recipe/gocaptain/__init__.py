@@ -102,7 +102,7 @@ class Buildout(GoCaptain):
             self.template = self.options['template']
         target = os.path.join(self.buildout['buildout']['bin-directory'], self.name)
         try:
-            self.write(open(target, "w"), **self.options)
+            self.write(open(target, "w"), **self.options.copy())
         except KeyError:
             os.unlink(target)
             raise
