@@ -30,6 +30,9 @@ class GoCaptain(object):
         self.required = required
 
     def write(self, stream, **kw):
+        for i in self.notsupported:
+            if i in kw:
+                raise KeyError("Unsupported option: %s" % i)
         for i in self.required:
             if not i in kw:
                 raise KeyError("Missing option: %s" % i)
@@ -53,6 +56,9 @@ class Simple(GoCaptain):
             'pidfile',
             'args',
         ]
+    notsupported = [
+            'background',
+    ]
 
     def __init__(self):
         pass
@@ -69,6 +75,8 @@ class LinuxStandardBase(GoCaptain):
             'pidfile',
             'args',
         ]
+    notsupported = [
+    ]
 
     def __init__(self):
         pass

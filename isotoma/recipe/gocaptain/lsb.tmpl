@@ -4,13 +4,17 @@
 
 ${preamble}
 
+#if $getVar('background', None)
+START_OPTIONS="--make-pidfile --background"
+#end if
+
 case "\$1" in
     start)
         output=\$(/bin/tempfile -s.$name)
         log_daemon_msg "Starting $description"
         log_progress_msg "$name"
         if start-stop-daemon \
-            --start --quiet --pidfile $pidfile --exec $daemon -- \
+            --start --quiet \$START_OPTIONS --pidfile $pidfile --exec $daemon -- \
             #echo " \\\n".join([12*" " + x.strip() for x in $args.strip()split("\n")])
             > \${output} 2>&1; then
                 log_end_msg 0
