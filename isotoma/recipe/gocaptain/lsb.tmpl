@@ -13,7 +13,7 @@ case "\$1" in
         output=\$(/bin/tempfile -s.$name)
         log_daemon_msg "Starting $description"
         log_progress_msg "$name"
-        if start-stop-daemon \
+        if /sbin/start-stop-daemon \
             --start --quiet \$START_OPTIONS --pidfile $pidfile --exec $daemon -- \
             #echo " \\\n".join([12*" " + x.strip() for x in $args.strip()split("\n")])
             > \${output} 2>&1; then
@@ -28,7 +28,7 @@ case "\$1" in
     stop)
         log_daemon_msg "Stopping $description"
         log_progress_msg "$name"
-        if start-stop-daemon \
+        if /sbin/start-stop-daemon \
             --stop --quiet --pidfile $pidfile --retry 10 \
             --exec $daemon; then
                 log_end_msg 0
