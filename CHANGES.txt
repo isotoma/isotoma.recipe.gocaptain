@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-0.0.12 (unreleased)
+0.0.12 (2012-06-27)
 -------------------
 
 - Force RedHat and Centos to use Simple init scripts and LSB template is
