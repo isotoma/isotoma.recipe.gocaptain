@@ -4,7 +4,7 @@ CHANGES
 0.0.13 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Don't hard code a Cheetah version!?.
 
 
 0.0.12 (2012-06-27)

@@ -30,7 +30,7 @@ setup(
     zip_safe = False,
     install_requires = [
         'setuptools',
-        'Cheetah==2.4.4',
+        'Cheetah',
     ],
     entry_points = {
         "zc.buildout": [
