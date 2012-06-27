@@ -84,7 +84,7 @@ class LinuxStandardBase(GoCaptain):
 class Automatic(object):
 
     def __init__(self, *a, **kw):
-        if os.path.exists('/lib/lsb/init-functions'):
+        if os.path.exists('/lib/lsb/init-functions') and not os.path.exists("/etc/redhat-release"):
             self.__class__ = LinuxStandardBase
         else:
             self.__class__ = Simple
@@ -130,7 +130,7 @@ class LinuxStandardBaseBuildout(LinuxStandardBase, Buildout):
 class AutomaticBuildout(object):
 
     def __init__(self, *a, **kw):
-        if os.path.exists('/lib/lsb/init-functions'):
+        if os.path.exists('/lib/lsb/init-functions') and not os.path.exists("/etc/redhat-release"):
             self.__class__ = LinuxStandardBaseBuildout
         else:
             self.__class__ = SimpleBuildout

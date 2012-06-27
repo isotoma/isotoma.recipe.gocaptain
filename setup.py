@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.0.11'
+version = '0.0.12dev'
 
 setup(
     name = 'isotoma.recipe.gocaptain',
@@ -10,6 +10,7 @@ setup(
                        open("CHANGES.txt").read(),
     classifiers = [
         "Framework :: Buildout",
+        "Framework :: Buildout :: Recipe",
         "Intended Audience :: System Administrators",
         "Operating System :: POSIX",
         "License :: OSI Approved :: Apache Software License",

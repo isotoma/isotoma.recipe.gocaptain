@@ -1,0 +1,9 @@
+CHANGES
+=======
+
+0.0.12 (unreleased)
+-------------------
+
+- Force RedHat and Centos to use Simple init scripts and LSB template is
+  actually a bit debian specific.
+
